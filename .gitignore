@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+
+# Editor/OS
+.DS_Store
+*.swp
+*.swo
+
+# Problems and generated files
+problems/
+last_problem.html
+
+# VSCode/Cursor
+.vscode/
+.idea/ 

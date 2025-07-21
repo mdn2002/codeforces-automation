@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Codeforces Problem Exporter",
+  "version": "1.0",
+  "description": "Send Codeforces problem HTML to local script",
+  "permissions": ["scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "https://codeforces.com/*"
+  ],
+  "commands": {
+    "send-html": {
+      "description": "Send problem HTML to local script"
+    }
+  }
+} 

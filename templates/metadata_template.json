@@ -1,0 +1,14 @@
+{
+    "problem_id": "{problem_id}",
+    "problem_name": "{problem_name}",
+    "url": "{problem_url}",
+    "date": "{date}",
+    "test_cases": {
+        "count": "{test_case_count}",
+        "files": []
+    },
+    "constraints": {
+        "time_limit": "{time_limit}",
+        "memory_limit": "{memory_limit}"
+    }
+} 
