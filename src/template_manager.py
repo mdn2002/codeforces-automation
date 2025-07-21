@@ -33,10 +33,6 @@ class TemplateManager:
         """Get a template by name"""
         return self.templates.get(template_name)
     
-    def list_templates(self) -> list:
-        """List all available templates"""
-        return list(self.templates.keys())
-    
     def customize_template(self, template_name: str, variables: Dict[str, Any]) -> Optional[str]:
         """Customize a template with given variables"""
         template = self.get_template(template_name)
@@ -124,9 +120,4 @@ class TemplateManager:
             'test_case_count': len(test_cases),
             'time_limit': problem_data.get('time_limit', 'Unknown'),
             'memory_limit': problem_data.get('memory_limit', 'Unknown')
-        }
-    
-    def reload_templates(self) -> None:
-        """Reload all templates from disk"""
-        self.templates.clear()
-        self.load_templates() 
+        } 

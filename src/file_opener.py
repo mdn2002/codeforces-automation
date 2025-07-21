@@ -1,5 +1,4 @@
 import subprocess
-import platform
 import os
 from typing import Dict, Any
 
@@ -58,61 +57,4 @@ class FileOpener:
                     self.open_file(metadata_file)
         
         except Exception as e:
-            print(f"Failed to open problem files: {e}")
-    
-    def test_editor_availability(self) -> bool:
-        """Test if the configured editor is available"""
-        try:
-            # Try to run the editor command with --version or --help
-            test_cmd = [self.editor_command]
-            
-            # Add common version flags
-            if self.editor_command == 'code':
-                test_cmd.append('--version')
-            elif self.editor_command in ['vim', 'nvim']:
-                test_cmd.append('--version')
-            elif self.editor_command == 'subl':
-                test_cmd.append('--version')
-            else:
-                test_cmd.append('--help')
-            
-            result = subprocess.run(test_cmd, capture_output=True, text=True, timeout=5)
-            return result.returncode == 0
-            
-        except (subprocess.TimeoutExpired, FileNotFoundError, Exception):
-            return False
-    
-    def get_available_editors(self) -> list:
-        """Get a list of available editors on the system"""
-        available_editors = []
-        
-        # Common editors to check
-        editors = [
-            ('code', 'Visual Studio Code'),
-            ('subl', 'Sublime Text'),
-            ('nvim', 'Neovim'),
-            ('vim', 'Vim'),
-            ('nano', 'Nano'),
-            ('gedit', 'Gedit'),
-            ('geany', 'Geany'),
-            ('kate', 'Kate'),
-            ('mousepad', 'Mousepad')
-        ]
-        
-        for command, name in editors:
-            try:
-                result = subprocess.run([command, '--version'], 
-                                      capture_output=True, text=True, timeout=3)
-                if result.returncode == 0:
-                    available_editors.append((command, name))
-            except (subprocess.TimeoutExpired, FileNotFoundError):
-                continue
-        
-        return available_editors
-    
-    def suggest_editor(self) -> str:
-        """Suggest an available editor if current one is not found"""
-        available = self.get_available_editors()
-        if available:
-            return available[0][0]  # Return the first available editor
-        return 'nano'  # Fallback to nano which is usually available 
+            print(f"Failed to open problem files: {e}") 
