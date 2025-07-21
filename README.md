@@ -5,7 +5,6 @@ A Python tool to automate the creation of Codeforces problem files with template
 ## Features
 
 - **Browser Integration**: Extract problem data directly from active Codeforces browser tabs
-- **Manual Input**: Create problems by providing problem ID, URL, or contest/problem format
 - **Template System**: Customizable C++ templates with variables
 - **Test Case Management**: Creates clean input/output files for testing
 - **Auto File Opening**: Opens solution file in your preferred editor
@@ -53,22 +52,17 @@ codeforces-automation/
 ## Usage
 
 ### Browser Integration (Recommended)
-1. Open a Codeforces problem in your browser
-2. Run: `python3 run.py --browser`
-3. The tool will:
-   - Detect the active Codeforces tab
+1. **Start the Python server:**
+   ```bash
+   python3 cf_receiver.py
+   ```
+2. **Open a Codeforces problem in your browser**
+3. **Press your extension shortcut** (e.g., Ctrl+Alt+C)
+4. The tool will:
+   - Receive the problem HTML from your browser
    - Extract problem information and test cases
-   - Create problem directory and files
+   - Create the problem directory and files
    - Open the solution file in your editor
-
-### Manual Input
-1. Run: `python3 run.py 1850A` (problem ID)
-2. Or: `python3 run.py "https://codeforces.com/contest/1850/problem/A"` (URL)
-3. Or: `python3 run.py` (interactive mode)
-
-### Interactive Mode
-1. Run: `python3 run.py`
-2. Choose from the menu options
 
 ## Configuration
 
