@@ -4,8 +4,7 @@
     "url": "{problem_url}",
     "date": "{date}",
     "test_cases": {
-        "count": "{test_case_count}",
-        "files": []
+        "count": "{test_case_count}"
     },
     "constraints": {
         "time_limit": "{time_limit}",

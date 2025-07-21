@@ -4,9 +4,9 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "src"
 
 from flask import Flask, request
 from flask_cors import CORS
-from problem_creator import ProblemCreator
-from utils.config_parser import ConfigParser
-from html_parser import CodeforcesHTMLParser
+from src.problem_creator import ProblemCreator
+from src.utils.config_parser import ConfigParser
+from src.html_parser import CodeforcesHTMLParser
 import re
 
 app = Flask(__name__)

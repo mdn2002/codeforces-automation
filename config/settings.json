@@ -2,8 +2,6 @@
     "output_directory": "./problems",
     "template_directory": "./templates",
     "default_language": "cpp",
-    "auto_download_testcases": true,
-    "create_metadata": true,
     "auto_open_files": true,
     "file_naming": {
         "solution_file": "solution.cpp",
@@ -13,25 +11,11 @@
         "output_suffix": "",
         "metadata_file": "metadata.json"
     },
-    "organization": {
-        "group_by_contest": true,
-        "separate_practice": true
-    },
-    "test_cases": {
-        "auto_number": true,
-        "start_number": 1,
-        "include_headers": false
-    },
     "editor": {
         "command": "geany",
         "args": [],
         "open_solution": true,
         "open_testcase": false,
         "open_metadata": false
-    },
-    "keyboard_shortcut": {
-        "enabled": true,
-        "keys": ["shift", "alt", "c"],
-        "description": "Create problem files"
     }
 } 

@@ -4,8 +4,8 @@ Codeforces Problem Automation Tool
 Main entry point for the application
 """
 
-from utils.config_parser import ConfigParser
-from problem_creator import ProblemCreator
+from src.utils.config_parser import ConfigParser
+from src.problem_creator import ProblemCreator
 
 def main():
     config = ConfigParser()
