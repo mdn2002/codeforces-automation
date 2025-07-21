@@ -34,8 +34,7 @@ class ConfigParser:
             'template_directory',
             'default_language',
             'file_naming',
-            'editor',
-            'keyboard_shortcut'
+            'editor'
         ]
         
         for field in required_fields:

@@ -20,6 +20,8 @@ codeforces-automation/
 ├── config/                 # Configuration files
 ├── problems/               # Generated problem files
 ├── requirements.txt        # Python dependencies
+├── start_gui_tk.py         # User-friendly GUI launcher
+├── cf-extension/           # Chrome extension for browser integration
 └── README.md              # This file
 ```
 
@@ -28,6 +30,7 @@ codeforces-automation/
 1. **Install Dependencies**:
    ```bash
    pip install -r requirements.txt
+   sudo apt install python3-tk  # For the GUI
    ```
 
 2. **Install ChromeDriver** (for browser integration):
@@ -44,25 +47,37 @@ codeforces-automation/
 4. **Set Up Templates**:
    Customize `templates/cpp_template.cpp` with your preferred C++ template
 
-5. **Run the Application**:
-   ```bash
-   python3 run.py
-   ```
+## Chrome Extension Setup & Shortcut
+
+### Install the Extension
+1. Open Chrome and go to `chrome://extensions/`
+2. Enable **Developer mode** (top right)
+3. Click **Load unpacked** and select the `cf-extension` folder from your project
+
+### Set the Keyboard Shortcut
+1. Go to `chrome://extensions/shortcuts`
+2. Find **Codeforces Problem Exporter** (or the extension name)
+3. Set a shortcut for “Send problem HTML to local script” (e.g., `Ctrl+Alt+C`)
+4. Make sure it says “In Chrome” (not “Global” or “In Windows”)
 
 ## Usage
 
-### Browser Integration (Recommended)
-1. **Start the Python server:**
+### User-Friendly GUI (Recommended)
+1. **Run the GUI launcher:**
    ```bash
-   python3 cf_receiver.py
+   python3 start_gui_tk.py
    ```
-2. **Open a Codeforces problem in your browser**
-3. **Press your extension shortcut** (e.g., Ctrl+Alt+C)
-4. The tool will:
+   > **Note:** Double-clicking the file may open it in your code editor. To run the GUI, use the command above in your terminal.
+
+2. **Click "Start Server"** in the GUI window.
+3. **Open a Codeforces problem in your browser**
+4. **Press your extension shortcut** (e.g., Ctrl+Alt+C)
+5. The tool will:
    - Receive the problem HTML from your browser
    - Extract problem information and test cases
    - Create the problem directory and files
    - Open the solution file in your editor
+6. **Click "Stop Server" or close the GUI** to stop the server cleanly.
 
 ## Configuration
 

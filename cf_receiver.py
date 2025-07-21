@@ -22,13 +22,15 @@ def receive():
         f.write(html)
     # Parse the HTML
     parsed = CodeforcesHTMLParser.parse_problem(html)
-    # Extract problem_id from URL
-    match = re.search(r'/problemset/problem/(\d+)/([A-Z])|/contest/(\d+)/problem/([A-Z])', url)
+    # Extract problem_id from URL (support gym, contest, and problemset)
+    match = re.search(r'/problemset/problem/(\d+)/([A-Z])|/contest/(\d+)/problem/([A-Z])|/gym/(\d+)/problem/([A-Z])', url)
     if match:
         if match.group(1) and match.group(2):
             problem_id = f"{match.group(1)}{match.group(2)}"
         elif match.group(3) and match.group(4):
             problem_id = f"{match.group(3)}{match.group(4)}"
+        elif match.group(5) and match.group(6):
+            problem_id = f"{match.group(5)}{match.group(6)}"
         else:
             problem_id = parsed['problem_name'].replace(' ', '_')
     else:
